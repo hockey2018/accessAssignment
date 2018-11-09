@@ -31,6 +31,10 @@ stop_for_status(req)
 # this will get the content from the required request
 json1 = content(req)
 
+# this line will convert the data to a data frame
+gitDF = jsonlite::fromJSON(jsonlite::toJSON(json1))
+
+
 
 
 
