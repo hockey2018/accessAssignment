@@ -28,6 +28,9 @@ req <- GET("https://api.github.com/users/jtleek/repos", gtoken)
 # This will stop the http error
 stop_for_status(req)
 
+# this will get the content from the required request
+json1 = content(req)
+
 
 
 
