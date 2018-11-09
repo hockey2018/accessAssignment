@@ -1,7 +1,11 @@
+#aoife sullivan software engineering assignment
+#15323016
 #this r code should allow the user to access git hub 
 #in order to implement this code, please install the following packages
-#
-#
+# when you run it at the end and if it does not work you must type 0 into
+# the console and rerun the code, you then should be brought to a git hub 
+# authorisation site and you know that your code has worked
+
 
 #install.packages("jsonlite")
 library(jsonlite)
