@@ -17,3 +17,11 @@ oauth_endpoints("github")
 myapp <- oauth_app(appname = "aoifesAccessAssignment",
                    key = "a18829be5dfb86ca6f94",
                    secret = "c1a561fa6b32bbd3b8dbb77a8f45df83f906021e")
+
+# this will get the oath creditdentials from github
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+
+# this will use api
+gtoken <- config(token = github_token)
+req <- GET("https://api.github.com/users/jtleek/repos", gtoken)
+
