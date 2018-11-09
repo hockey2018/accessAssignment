@@ -34,6 +34,9 @@ json1 = content(req)
 # this line will convert the data to a data frame
 gitDF = jsonlite::fromJSON(jsonlite::toJSON(json1))
 
+# this will make a subset data frame 
+gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"] 
+
 
 
 
