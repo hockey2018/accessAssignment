@@ -47,4 +47,5 @@ gitDF = jsonlite::fromJSON(jsonlite::toJSON(json1))
 # this will make a subset data frame 
 gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"] 
 
-
+#PART 1: Interrogate the GitHub API to retrieve and display data regarding the logged in developer.
+#Logged in developer: phadej
