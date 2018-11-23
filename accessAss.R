@@ -56,3 +56,14 @@ c = content(data1)
 
 #Save users' data in a dataframe
 data1 = jsonlite::fromJSON(jsonlite::toJSON(c))
+
+#Retrieve information on 'phadej' and save in a vector
+login = data1$login
+following = data1$following
+followers = data1$followers
+name = data1$name
+id = data1$id
+public_repos = data1$public_repos
+created_at = data1$created_at
+updated_at = data1$updated_at
+location = data1$location
