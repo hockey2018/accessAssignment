@@ -49,3 +49,7 @@ gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"]
 
 #PART 1: Interrogate the GitHub API to retrieve and display data regarding the logged in developer.
 #Logged in developer: phadej
+
+# Access Users profile. 
+data1 = GET("https://api.github.com/users/zhchyu999", gtoken)
+c = content(data1)
