@@ -70,3 +70,5 @@ location = data1$location
 
 #This vector will contain all information on phadej
 phadej = c(login, following, followers, name, id, public_repos, created_at, updated_at, location)
+
+write.csv(phadej, 'PhadeJ.csv')
