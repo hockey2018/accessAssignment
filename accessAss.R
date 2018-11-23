@@ -5,7 +5,7 @@
 # when you run it at the end and if it does not work you must type 0 into
 # the console and rerun the code, you then should be brought to a git hub 
 # authorisation site and you know that your code has worked
-#hhhhhhhhh
+
 
 #install.packages("jsonlite")
 library(jsonlite)
@@ -13,6 +13,8 @@ library(jsonlite)
 library(httpuv)
 #install.packages("httr")
 library(httr)
+
+
 
 # this can be any application but here we will use github
 oauth_endpoints("github")
@@ -29,6 +31,10 @@ github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
 gtoken <- config(token = github_token)
 req <- GET("https://api.github.com/users/jtleek/repos", gtoken)
 
+#Dataframe to be used in assignment 
+allDataDF = data.frame( Username = integer(), Following = integer(), Followers = integer(), Repositories = integer(), DateCreated = integer(), Location = integer())
+allData = c()
+
 # This will stop the http error
 stop_for_status(req)
 
@@ -40,8 +46,5 @@ gitDF = jsonlite::fromJSON(jsonlite::toJSON(json1))
 
 # this will make a subset data frame 
 gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"] 
-
-
-
 
 
