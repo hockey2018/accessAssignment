@@ -53,3 +53,6 @@ gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"]
 # Access Users profile. 
 data1 = GET("https://api.github.com/users/zhchyu999", gtoken)
 c = content(data1)
+
+#Save users' data in a dataframe
+data1 = jsonlite::fromJSON(jsonlite::toJSON(c))
