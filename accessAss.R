@@ -72,3 +72,7 @@ location = data1$location
 phadej = c(login, following, followers, name, id, public_repos, created_at, updated_at, location)
 
 write.csv(phadej, 'PhadeJ.csv')
+
+#Part 2: The second part of the assignment is to interrogate the github API to build some sort of data 
+#visualisation that highlights some aspect of the software engineering process.
+#I will do the visualisation through plotly.
