@@ -179,6 +179,10 @@ for (i in 1:length(id))
   next
 }
 
+Sys.setenv("plotly_username"="hockey2018")
+Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
+
+
 #Create temporary vector 
 totalusers = c()
 allcommits = c()
