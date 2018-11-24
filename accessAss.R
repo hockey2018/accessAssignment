@@ -183,6 +183,7 @@ for (i in 1:length(id))
   next
 }
 
+#This links r to plotly
 Sys.setenv("plotly_username"="hockey2018")
 Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
 
@@ -191,10 +192,17 @@ plot1 = plot_ly(data = usersDB, x = ~repos, y = ~followers,
                               repos, "<br>Date Created:", created), color = ~created)
 plot1
 
+#Upload the plot to Plotly
+Sys.setenv("plotly_username"="hockey2018")
+Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
+api_create(plot1, filename = "Followers vs Repositories by Date")
+
+
 plot2 = plot_ly(data = usersDB, x = ~following, y = ~followers, 
                 text = ~paste("Followers: ", followers, "<br>Following: ", 
                               following))
 plot2
+
 #Create temporary vector 
 totalusers = c()
 allcommits = c()
