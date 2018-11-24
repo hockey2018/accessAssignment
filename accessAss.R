@@ -191,7 +191,7 @@ plot1 = plot_ly(data = usersDB, x = ~repos, y = ~followers,
                               repos, "<br>Date Created:", created), color = ~created)
 plot1
 
-plot2 = plot_ly(data = usersDB, x = ~repos, y = ~followers, 
+plot2 = plot_ly(data = usersDB, x = ~following, y = ~followers, 
                 text = ~paste("Followers: ", followers, "<br>Following: ", 
                               following))
 plot2
