@@ -119,3 +119,7 @@ for (i in 1:length(id))
   {
     #this will make sure the user isnt in the group already
     if (is.element(followersLogin[j], allData) == FALSE)
+    {
+      length(allData)
+      #this will add the users to the list
+      allData[length(allData) + 1] = followersLogin[j]
