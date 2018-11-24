@@ -47,6 +47,11 @@ gitDF = jsonlite::fromJSON(jsonlite::toJSON(json1))
 # this will make a subset data frame 
 gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"] 
 
+
+# The code above was sourced from Michael Galarnyk's blog, found at:
+# https://towardsdatascience.com/accessing-data-from-github-api-using-r-3633fb62cb08
+
+
 #PART 1: Interrogate the GitHub API to retrieve and display data regarding the logged in developer.
 #Logged in developer: phadej
 
@@ -171,5 +176,17 @@ for (i in 1:length(id))
   {
     break
   }
+  next
+}
+
+#Create temporary vector 
+totalusers = c()
+allcommits = c()
+allcommits
+for( i in 1:length(totalusers)){
+  currentuser = totalusers[i]
+  currentuser
+  url = paste("https://api.github.com/users/", currentuser, "/commits", sep="")
+  commits = fromJSON(url)
   next
 }
