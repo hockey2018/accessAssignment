@@ -13,7 +13,11 @@ library(jsonlite)
 library(httpuv)
 #install.packages("httr")
 library(httr)
-
+#install.packages("plotly")
+library(plotly)
+packageVersion('plotly')
+#install.packages("igraph")
+library(igraph)
 
 
 # this can be any application but here we will use github
