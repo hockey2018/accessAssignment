@@ -258,4 +258,9 @@ for (i in 1:length(users))
   #go through all the users by a loop
   for (j in 1: length(g))
   {
+    #save all users in a data frame
+    url5 = paste("https://api.github.com/repos/", users[i], "/", RepositoriesNames[j], sep = "")
+    h = GET(url5, gtoken)
+    languages2 = content(h)
+    lang2 = jsonlite::fromJSON(jsonlite::toJSON(languages2))
   
