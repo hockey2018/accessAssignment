@@ -196,12 +196,17 @@ plot1
 Sys.setenv("plotly_username"="hockey2018")
 Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
 api_create(plot1, filename = "Followers vs Repositories by Date")
-
+# the link to plotly can be found here https://plot.ly/~hockey2018/1/#/
 
 plot2 = plot_ly(data = usersDB, x = ~following, y = ~followers, 
                 text = ~paste("Followers: ", followers, "<br>Following: ", 
                               following))
 plot2
+#Upload the plot to Plotly
+Sys.setenv("plotly_username"="hockey2018")
+Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
+api_create(plot1, filename = "Followers vs Following")
+# the link to plotly can be found here https://plot.ly/~hockey2018/3/#/
 
 #Create temporary vector 
 totalusers = c()
