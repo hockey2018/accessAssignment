@@ -255,4 +255,7 @@ for (i in 1:length(users))
   
   #get names of all followers
   g = lang$name
+  #go through all the users by a loop
+  for (j in 1: length(g))
+  {
   
