@@ -182,6 +182,10 @@ for (i in 1:length(id))
 Sys.setenv("plotly_username"="hockey2018")
 Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
 
+plot1 = plot_ly(data = usersDB, x = ~repos, y = ~followers, 
+                text = ~paste("Followers: ", followers, "<br>Repositories: ", 
+                              repos, "<br>Date Created:", created), color = ~created)
+plot1
 
 #Create temporary vector 
 totalusers = c()
