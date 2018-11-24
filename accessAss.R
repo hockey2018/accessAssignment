@@ -112,3 +112,7 @@ for (i in 1:length(id))
   
   #this will get the user names of the followers
   followersLogin = DF3$login
+  
+  #this secon loop will loop through the followers followers to make sure there are no duplicates
+ 
+  for (j in 1:length(followersLogin))
