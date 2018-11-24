@@ -167,3 +167,9 @@ for (i in 1:length(id))
     }
     next
   }
+  if(length(allData) >500)
+  {
+    break
+  }
+  next
+}
