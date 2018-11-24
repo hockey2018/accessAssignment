@@ -135,3 +135,6 @@ for (i in 1:length(id))
       
       #get those following
       following = DF4$following
+      
+      #get followers
+      followers = DF4$followers
