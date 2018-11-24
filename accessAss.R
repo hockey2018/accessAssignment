@@ -144,3 +144,10 @@ for (i in 1:length(id))
       
       #get those who joined Github
       created = substr(DF4$created_at, start = 1, stop = 10)
+      
+      #get there location
+      location = DF4$location
+      if(length(location)==0)
+      {
+        location = 'NULL'
+      }
