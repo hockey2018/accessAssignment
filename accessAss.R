@@ -80,3 +80,8 @@ write.csv(phadej, 'PhadeJ.csv')
 #this is the data frame that will be used in this assignment 
 allDataDF = data.frame( Username = integer(), Following = integer(), Followers = integer(), Repositories = integer(), DateCreated = integer(), Location = integer())
 allData = c()
+
+#Get the information on the followers of phadej and then store this information in a data fram 
+data2 = GET("https://api.github.com/users/phadej/followers", gtoken)
+content2 = content(data2)
+DF2 = jsonlite::fromJSON(jsonlite::toJSON(content2))
