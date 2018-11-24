@@ -85,3 +85,8 @@ allData = c()
 data2 = GET("https://api.github.com/users/phadej/followers", gtoken)
 content2 = content(data2)
 DF2 = jsonlite::fromJSON(jsonlite::toJSON(content2))
+
+#Get the usernames of phadeji followers and store them in a vector
+login = DF2$login
+id = c(login)
+id
