@@ -116,3 +116,6 @@ for (i in 1:length(id))
   #this secon loop will loop through the followers followers to make sure there are no duplicates
  
   for (j in 1:length(followersLogin))
+  {
+    #this will make sure the user isnt in the group already
+    if (is.element(followersLogin[j], allData) == FALSE)
