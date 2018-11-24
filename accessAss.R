@@ -123,3 +123,10 @@ for (i in 1:length(id))
       length(allData)
       #this will add the users to the list
       allData[length(allData) + 1] = followersLogin[j]
+      
+      #this will get data about each user
+      url2 = paste("https://api.github.com/users/", followersLogin[j], sep = "")
+      f = GET(url2, gtoken)
+      followers2 = content(f)
+      DF4 = jsonlite::fromJSON(jsonlite::toJSON(followers2))
+      
