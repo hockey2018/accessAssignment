@@ -132,3 +132,6 @@ for (i in 1:length(id))
       
       #get user ID
       id = DF4$id
+      
+      #get those following
+      following = DF4$following
