@@ -109,3 +109,6 @@ for (i in 1:length(id))
   
   #this will add the followers to the data frame
   DF3 = jsonlite::fromJSON(jsonlite::toJSON(followersContent))
+  
+  #this will get the user names of the followers
+  followersLogin = DF3$login
