@@ -154,3 +154,7 @@ for (i in 1:length(id))
       
       #get last time it was updated
       updated_At = DF4$updated_at
+      
+      #put the users data in a new data fram
+      allDataDF[nrow(allDataDF)+1, ] = c(followersLogin[j], following, followers, repos, created,location )
+    }
