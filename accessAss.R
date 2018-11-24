@@ -138,3 +138,6 @@ for (i in 1:length(id))
       
       #get followers
       followers = DF4$followers
+      
+      #get those public repositories
+      repos = DF4$public_repos
