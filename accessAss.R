@@ -100,3 +100,9 @@ for (i in 1:length(id))
   followers = GET(url, gtoken)
   followersContent = content(followers)
   length(followersContent)
+ 
+   #this will skip if there are no followers present
+  if (length(followersContent) == 0)
+  {
+    next
+  }
