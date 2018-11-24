@@ -263,4 +263,7 @@ for (i in 1:length(users))
     h = GET(url5, gtoken)
     languages2 = content(h)
     lang2 = jsonlite::fromJSON(jsonlite::toJSON(languages2))
+    
+    #find the language that each user uses
+    languageUse = lan2$language
   
