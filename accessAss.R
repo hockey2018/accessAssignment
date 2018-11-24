@@ -18,7 +18,7 @@ library(plotly)
 packageVersion('plotly')
 #install.packages("igraph")
 library(igraph)
-
+install.packages("xml2")
 
 # this can be any application but here we will use github
 oauth_endpoints("github")
@@ -205,7 +205,7 @@ plot2
 #Upload the plot to Plotly
 Sys.setenv("plotly_username"="hockey2018")
 Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
-api_create(plot1, filename = "Followers vs Following")
+api_create(plot2, filename = "Followers vs Following")
 # the link to plotly can be found here https://plot.ly/~hockey2018/3/#/
 
 plot3 = plot_ly(data = usersDB, x = ~followers, y = ~location, 
@@ -215,7 +215,7 @@ plot3
 #Upload the plot to Plotly
 Sys.setenv("plotly_username"="hockey2018")
 Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
-api_create(plot1, filename = "Followers vs Location")
+api_create(plot3, filename = "Followers vs Location")
 # the link to plotly can be found here https://plot.ly/~hockey2018/5/#/
 
 #Create temporary vector 
@@ -236,13 +236,13 @@ plot4
 #Upload the plot to Plotly
 Sys.setenv("plotly_username"="hockey2018")
 Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
-api_create(plot1, filename = "Followers vs Location")
+api_create(plot4, filename = "Followers vs Location")
 # the link to plotly can be found here https://plot.ly/~hockey2018/5/#/
 
 
 
 #Now i will try and find the most popular language used by phadeji users, first I create a vector
-Languages = c()
+languages = c()
 
 #use a loop to check all the users
 for (i in 1:length(users))
@@ -259,7 +259,7 @@ for (i in 1:length(users))
   for (j in 1: length(g))
   {
     #save all users in a data frame
-    url5 = paste("https://api.github.com/repos/", users[i], "/", RepositoriesNames[j], sep = "")
+    url5 = paste("https://api.github.com/repos/", users[i], "/", g[j], sep = "")
     h = GET(url5, gtoken)
     languages2 = content(h)
     lang2 = jsonlite::fromJSON(jsonlite::toJSON(languages2))
@@ -270,10 +270,28 @@ for (i in 1:length(users))
     #exclude anything with no language
     if (length(languageUse) != 0 && languageUse != "<NA>")
     {
-      languagesUse[length(languagesUse)+1] = languageUse
+      languages[length(languages)+1] = languageUse
     }
     next
   }
   next
 }
+
+#get top 50 languages used
+languageTable = sort(table(languages), increasing=TRUE)
+languageTableTop50 = LanguageTable[(length(languageTable)-49):length(languageTable)]
+
+#put this in dataframes
+languageDB = as.data.frame(languageTableTop50)
+
+plot5 = plot_ly(data = languageDB, x = ~languageDB$Languages, y = ~languageDB$Freq, 
+                text = ~paste("Lanuages ",languageDB$Languages , "<br>Freq ", 
+                              languageDB$Freq))
+plot5
+#Upload the plot to Plotly
+Sys.setenv("plotly_username"="hockey2018")
+Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
+api_create(plot5, filename = "Language vs Frequency")
+# the link to plotly can be found here https://plot.ly/~hockey2018/5/#/
+
   
