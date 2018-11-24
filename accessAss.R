@@ -266,4 +266,14 @@ for (i in 1:length(users))
     
     #find the language that each user uses
     languageUse = lan2$language
+    
+    #exclude anything with no language
+    if (length(languageUse) != 0 && languageUse != "<NA>")
+    {
+      languagesUse[length(languagesUse)+1] = languageUse
+    }
+    next
+  }
+  next
+}
   
