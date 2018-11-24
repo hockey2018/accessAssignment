@@ -158,3 +158,10 @@ for (i in 1:length(id))
       #put the users data in a new data fram
       allDataDF[nrow(allDataDF)+1, ] = c(followersLogin[j], following, followers, repos, created,location )
     }
+    
+    #put in a limit to speed up the run time, i chose 600
+    #This can also be extended to an infinite amount of users
+    if(length(allData) >600)
+    {
+      break 
+    }
