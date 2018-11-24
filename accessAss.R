@@ -130,3 +130,5 @@ for (i in 1:length(id))
       followers2 = content(f)
       DF4 = jsonlite::fromJSON(jsonlite::toJSON(followers2))
       
+      #get user ID
+      id = DF4$id
