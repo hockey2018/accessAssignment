@@ -238,3 +238,8 @@ Sys.setenv("plotly_username"="hockey2018")
 Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
 api_create(plot1, filename = "Followers vs Location")
 # the link to plotly can be found here https://plot.ly/~hockey2018/5/#/
+
+
+
+#Now i will try and find the most popular language used by phadeji users, first I create a vector
+Languages = c()
