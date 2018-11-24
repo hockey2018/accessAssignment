@@ -106,3 +106,6 @@ for (i in 1:length(id))
   {
     next
   }
+  
+  #this will add the followers to the data frame
+  DF3 = jsonlite::fromJSON(jsonlite::toJSON(followersContent))
