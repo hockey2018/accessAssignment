@@ -247,3 +247,8 @@ Languages = c()
 #use a loop to check all the users
 for (i in 1:length(users))
 {
+  #this will get data about each user
+  url4 = paste("https://api.github.com/users/", users[i], sep = "")
+  g = GET(url4, gtoken)
+  languages1 = content(g)
+  lang = jsonlite::fromJSON(jsonlite::toJSON(languages1))
