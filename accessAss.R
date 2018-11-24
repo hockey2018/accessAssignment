@@ -90,3 +90,6 @@ DF2 = jsonlite::fromJSON(jsonlite::toJSON(content2))
 login = DF2$login
 id = c(login)
 id
+
+#will create a loop to go through the users to find the users and add them to the list
+for (i in 1:length(id))
