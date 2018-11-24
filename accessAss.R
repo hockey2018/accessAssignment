@@ -151,3 +151,6 @@ for (i in 1:length(id))
       {
         location = 'NULL'
       }
+      
+      #get last time it was updated
+      updated_At = DF4$updated_at
