@@ -141,3 +141,6 @@ for (i in 1:length(id))
       
       #get those public repositories
       repos = DF4$public_repos
+      
+      #get those who joined Github
+      created = substr(DF4$created_at, start = 1, stop = 10)
