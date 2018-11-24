@@ -191,6 +191,10 @@ plot1 = plot_ly(data = usersDB, x = ~repos, y = ~followers,
                               repos, "<br>Date Created:", created), color = ~created)
 plot1
 
+plot2 = plot_ly(data = usersDB, x = ~repos, y = ~followers, 
+                text = ~paste("Followers: ", followers, "<br>Following: ", 
+                              following))
+plot2
 #Create temporary vector 
 totalusers = c()
 allcommits = c()
