@@ -252,3 +252,7 @@ for (i in 1:length(users))
   g = GET(url4, gtoken)
   languages1 = content(g)
   lang = jsonlite::fromJSON(jsonlite::toJSON(languages1))
+  
+  #get names of all followers
+  g = lang$name
+  
