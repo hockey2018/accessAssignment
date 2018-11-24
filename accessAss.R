@@ -243,3 +243,7 @@ api_create(plot1, filename = "Followers vs Location")
 
 #Now i will try and find the most popular language used by phadeji users, first I create a vector
 Languages = c()
+
+#use a loop to check all the users
+for (i in 1:length(users))
+{
