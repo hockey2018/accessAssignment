@@ -93,3 +93,10 @@ id
 
 #will create a loop to go through the users to find the users and add them to the list
 for (i in 1:length(id))
+{
+  #create a list that will track individual followers
+  u = id[i]
+  url = paste("https://api.github.com/users/", id[i], "/followers", sep = "")
+  followers = GET(url, gtoken)
+  followersContent = content(followers)
+  length(followersContent)
