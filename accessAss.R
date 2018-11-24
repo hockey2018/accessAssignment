@@ -217,6 +217,7 @@ Sys.setenv("plotly_username"="hockey2018")
 Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
 api_create(plot1, filename = "Followers vs Location")
 # the link to plotly can be found here https://plot.ly/~hockey2018/5/#/
+
 #Create temporary vector 
 totalusers = c()
 allcommits = c()
@@ -228,3 +229,12 @@ for( i in 1:length(totalusers)){
   commits = fromJSON(url)
   next
 }
+plot4 = plot_ly(data = usersDB, x = ~followers, y = ~currentuser, 
+                text = ~paste("Followers: ", followers, "<br>Current user: ", 
+                              currentuser))
+plot4
+#Upload the plot to Plotly
+Sys.setenv("plotly_username"="hockey2018")
+Sys.setenv("plotly_api_key"="sEWCo7HQFXNfdxix652U")
+api_create(plot1, filename = "Followers vs Location")
+# the link to plotly can be found here https://plot.ly/~hockey2018/5/#/
